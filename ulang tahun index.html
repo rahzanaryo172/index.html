@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    padding: 35px 25px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #fff4f7;
+    margin-bottom: 20px;
+}
+
+.cake {
+    font-size: 90px;
+    animation: bounce 1.5s infinite;
+    margin: 20px;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #ff477e;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+    margin: 5px;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ff165d;
+}
+
+#message {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    animation: fadeIn 1s;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎉 Happy Birthday 🎉</h1>
+
+    <h2>Untuk Orang Spesial ❤️</h2>
+
+    <div class="cake">🎂</div>
+
+    <p>
+        Hari ini adalah hari yang istimewa,
+        karena seseorang yang luar biasa sedang berulang tahun.
+    </p>
+
+    <button onclick="showMessage()">
+        Buka Ucapan 💌
+    </button>
+
+    <div id="message">
+        <h2>Selamat Ulang Tahun! ❤️</h2>
+
+        <p>
+        Semoga panjang umur, sehat selalu,
+        dimudahkan segala urusannya,
+        dilancarkan rezekinya dan semua
+        impianmu bisa menjadi kenyataan.
+        </p>
+
+        <p>
+        Jangan pernah berhenti tersenyum.
+        Teruslah menjadi pribadi yang hebat.
+        Semoga hari ini penuh kebahagiaan! 🥰
+        </p>
+
+        <h2>With Love ❤️</h2>
+    </div>
+
+    <p style="margin-top:25px;">
+        Made with ❤️ just for you
+    </p>
+
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("message").style.display = "block";
+    confetti();
+}
+
+function confetti() {
+    const emojis = ["❤️", "💖", "🎉", "✨", "🌸", "💕"];
+
+    for (let i = 0; i < 35; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 7000);
+    }
+}
+</script>
+
+</body>
+</html>
